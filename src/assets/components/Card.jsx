@@ -3,8 +3,8 @@ import { useContext } from "react";
 import { UtentiContext } from "../stores/UtentiContex";
 
 
-function Card({ nome, cognome, imgUrl }) {
-  const placeholder = "https://via.placeholder.com/80x80.png?text=IMG"; // fallback immagine
+function Card({ nome, cognome, imgUrl, isCoglione }) {
+  const placeholder = "https://img.freepik.com/vettori-gratuito/circolo-blu-con-utente-bianco_78370-4707.jpg?semt=ais_hybrid&w=740&q=80"; // fallback immagine
 
   return (
     <div className="card shadow-sm" style={{ width: 320 }}>
@@ -22,6 +22,7 @@ function Card({ nome, cognome, imgUrl }) {
             {nome} {cognome}
           </h5>
           <p className="card-text text-muted mb-0">Profilo utente</p>
+          <p className="card-text text-muted mb-0">{isCoglione ? "È un coglione" : "Non è un coglione"}</p>
         </div>
       </div>
     </div>

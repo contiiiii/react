@@ -43,9 +43,7 @@ function Form() {
     });
   }
 
-  useEffect(() => {
-    console.log("Utenti aggiornati:", DatiUtenti);
-  }, [DatiUtenti]);
+
 
   return (
     <>

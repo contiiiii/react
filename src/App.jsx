@@ -1,26 +1,26 @@
 import { UtentiContext } from "./assets/stores/UtentiContex";
-import { useContext } from "react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Card from "./assets/components/Card";
 import Navbar from "./assets/components/NavBar";
 
 function App() {
-  const [DatiUtenti, setDatiUtenti] = useState([]);
-  console.log(DatiUtenti)
+  const { DatiUtenti, setDatiUtenti } = useContext(UtentiContext);
 
   return (
-    <UtentiContext.Provider value={{ DatiUtenti, setDatiUtenti }}>
-      <Navbar></Navbar>
-      {DatiUtenti.map((utente) => {
+    <>
+      <Navbar />
+      {DatiUtenti.map((utente) => (
         <Card
           key={Math.random()*100}
           nome={utente.nome}
           cognome={utente.cognome}
           imgUrl={utente.URL}
-        ></Card>;
-      })}
-    </UtentiContext.Provider>
+          isCoglione={utente.Coglione}
+        />
+      ))}
+    </>
   );
 }
 
 export default App;
+
