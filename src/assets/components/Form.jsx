@@ -23,13 +23,34 @@ function Form() {
       [name]: inputValue,
     });
   }
-
+/*  FUNZIONE PER TEST LOCALE
   async function handlesubmit (e) {
     e.preventDefault();
     
 
   try {
     const response = await axios.post("http://localhost:5000/api/forms", formData);
+    console.log("Risposta dal server:", response.data);
+  } catch (error) {
+    console.error("Errore POST:", error);
+  }
+
+    setFormData({
+      nome: "",
+      cognome: "",
+      URL: "",
+      Coglione: false,
+    });
+  }
+*/
+
+/*  FUNZIONE PER TEST ONLINE*/
+  async function handlesubmit (e) {
+    e.preventDefault();
+    
+
+  try {
+    const response = await axios.post("http://localhost:8888/.netlify/functions/insertUsers", formData);
     console.log("Risposta dal server:", response.data);
   } catch (error) {
     console.error("Errore POST:", error);

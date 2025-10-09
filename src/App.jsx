@@ -1,19 +1,26 @@
 import { UtentiContext } from "./assets/stores/UtentiContex";
-import { useContext, useEffect} from "react";
+import { useContext, useEffect } from "react";
 import Card from "./assets/components/Card";
 import Navbar from "./assets/components/Navbar";
 import axios from "axios";
 
 function App() {
   const { DatiUtenti, setDatiUtenti } = useContext(UtentiContext);
-
+  /* PER TEST IN LOCALE
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/utenti")
       .then((response) => setDatiUtenti(response.data))
       .catch((error) => console.error(error));
   }, []);
-
+ */
+  /* per test online */
+  useEffect(() => {
+    axios
+      .get("http://localhost:8888/.netlify/functions/getUsers")
+      .then((response) => setDatiUtenti(response.data))
+      .catch((error) => console.error(error));
+  }, []);
   return (
     <>
       <Navbar />
