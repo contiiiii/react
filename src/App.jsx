@@ -1,7 +1,7 @@
 import { UtentiContext } from "./assets/stores/UtentiContex";
 import { useContext, useEffect} from "react";
 import Card from "./assets/components/Card";
-import Navbar from "./assets/components/NavBar";
+import Navbar from "./assets/components/Navbar";
 import axios from "axios";
 
 function App() {
