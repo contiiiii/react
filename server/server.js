@@ -68,5 +68,14 @@ app.post("/api/forms", async (req, res) => {
   }
 });
 
+app.get("/api/utenti", async (req, res) => {
+  try {
+    const users = await Form.find();
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 // Avvio server
 app.listen(5000, () => console.log("Server avviato sulla porta 5000"));

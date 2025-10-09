@@ -5,7 +5,7 @@ import { UtentiContext } from "../stores/UtentiContex";
 
 function Card({ nome, cognome, imgUrl, isCoglione }) {
   const placeholder = "https://img.freepik.com/vettori-gratuito/circolo-blu-con-utente-bianco_78370-4707.jpg?semt=ais_hybrid&w=740&q=80"; // fallback immagine
-
+  
   return (
     <div className="card shadow-sm" style={{ width: 320 }}>
       <div className="card-body d-flex align-items-center gap-3">
