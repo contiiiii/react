@@ -1,5 +1,5 @@
 import { UtentiContext } from "./assets/stores/UtentiContex";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect} from "react";
 import Card from "./assets/components/Card";
 import Navbar from "./assets/components/NavBar";
 import axios from "axios";

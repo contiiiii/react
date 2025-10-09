@@ -3,7 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import React, { useState } from 'react'
 import App from './App.jsx'
 import Form from './assets/components/Form.jsx'
-import { UtentiContext } from './assets/stores/utentiContex'
+import { UtentiContext } from './assets/stores/UtentiContex'
+
 
 function Root() {
   const [DatiUtenti, setDatiUtenti] = useState([]);
