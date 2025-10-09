@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useContext } from "react";
 import { UtentiContext } from "../stores/UtentiContex";
-import Navbar from "./NavBar";
+import Navbar from "./Navbar";
 import axios from "axios";
 
 
 function Form() {
-  const { DatiUtenti, setDatiUtenti } = useContext(UtentiContext);
+  const { DatiUtenti} = useContext(UtentiContext);
 
   const [formData, setFormData] = useState({
     nome: "",
