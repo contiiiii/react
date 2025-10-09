@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { UtentiContext } from "../stores/UtentiContex";
 import Navbar from "./NavBar";
+import axios from "axios";
 
 
 function Form() {
@@ -23,17 +24,16 @@ function Form() {
     });
   }
 
-  function handlesubmit(e) {
+  async function handlesubmit (e) {
     e.preventDefault();
-    setDatiUtenti((prev) => [
-      ...prev,
-      {
-        nome: formData.nome,
-        cognome: formData.cognome,
-        URL: formData.URL,
-        Coglione: formData.Coglione,
-      },
-    ]);
+    
+
+  try {
+    const response = await axios.post("http://localhost:5000/api/forms", formData);
+    console.log("Risposta dal server:", response.data);
+  } catch (error) {
+    console.error("Errore POST:", error);
+  }
 
     setFormData({
       nome: "",

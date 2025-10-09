@@ -16,10 +16,10 @@ mongoose
   });
 
 const schema = new mongoose.Schema({
-  name: String,
+  nome: String,
   cognome: String,
-  imgURL: String,
-  isCoglione: Boolean,
+  URL: String,
+  Coglione: Boolean,
 });
 
 const Model = mongoose.model("utenti", schema);
